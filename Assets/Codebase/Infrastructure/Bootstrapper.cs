@@ -9,6 +9,8 @@ namespace Assets.Codebase.Infrastructure
 {
     public class Bootstrapper : MonoBehaviour
     {
+        [SerializeField] private RectTransform _uiRoot;
+
         private void Awake()
         {
             // Register Services
@@ -26,7 +28,7 @@ namespace Assets.Codebase.Infrastructure
 
             services.RegisterSingle<IGameStateMachine>(new GameStateMachine());
             services.RegisterSingle<IProgressService>(new ProgressService());
-            services.RegisterSingle<IUIFactory>(new UIFactory());
+            services.RegisterSingle<IUIFactory>(new UIFactory(_uiRoot));
             services.RegisterSingle<IAssetProvider>(new AssetProvider());
         }
     }
