@@ -2,6 +2,7 @@
 using Assets.Codebase.Infrastructure.Services.GameStates;
 using Assets.Codebase.Infrastructure.Services.UI;
 using Assets.Codebase.Utils;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,6 +23,8 @@ namespace Assets.Codebase.UI
 
         private IGameStateMachine _gameStates;
         private IUIFactory _ui;
+
+        public event Action OnBackPressed;
 
         private void Awake()
         {
@@ -80,6 +83,7 @@ namespace Assets.Codebase.UI
 
         private void OnBackButtonPressed()
         {
+            OnBackPressed?.Invoke();
             _gameStates.SwitchState(GameState.Idle);
             _ui.CreateMainMenu();
         }

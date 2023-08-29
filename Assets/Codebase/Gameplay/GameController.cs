@@ -35,11 +35,15 @@ namespace Assets.Codebase.Gameplay
         private void OnEnable()
         {
             _gameStates.OnAfterStateEnter += OnAfterGameStateChanged;
+            Ball.OnBallCollected += SpawnABall;
+            _ui.HUD.OnBackPressed += AbandonGame;
         }
 
         private void OnDisable()
         {
             _gameStates.OnAfterStateEnter -= OnAfterGameStateChanged;
+            Ball.OnBallCollected -= SpawnABall;
+            _ui.HUD.OnBackPressed -= AbandonGame;
         }
 
         private void OnAfterGameStateChanged(GameState newState)
@@ -67,13 +71,27 @@ namespace Assets.Codebase.Gameplay
             // Spawn Balls
             for (int i = 0; i < _numberOfBallsInGame; i++)
             {
-                int randomIndex = Random.Range(0, _activeMap.BallSpawnPositions.Count);
-                var ball = Pool.Instance.BallPool.Get();
-                ball.transform.position = _activeMap.BallSpawnPositions[randomIndex].position;
-                ball.gameObject.SetActive(true);
+                SpawnABall();
             }
 
             // Start Timer
+        }
+
+        private void SpawnABall()
+        {
+            int randomIndex = Random.Range(0, _activeMap.BallSpawnPositions.Count);
+            var ball = Pool.Instance.BallPool.Get();
+            ball.transform.position = _activeMap.BallSpawnPositions[randomIndex].position;
+            ball.gameObject.SetActive(true);
+        }
+
+        private void AbandonGame()
+        {
+            Pool.Instance.BallPool.Dispose();
+            Destroy(_activePlayer.gameObject);
+            _activePlayer = null;
+            _activeMap.gameObject.SetActive(false);
+            _activeMap = null;
         }
     }
 }

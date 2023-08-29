@@ -1,6 +1,7 @@
 ﻿using Assets.Codebase.Infrastructure.Services;
 using Assets.Codebase.Infrastructure.Services.Factories;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -31,7 +32,7 @@ namespace Assets.Codebase.Gameplay
 
         private void Start()
         {
-            _ballPool = new ObjectPool<Ball>(CreateBall, OnGetBall, OnReleaseBall);
+            _ballPool = new ObjectPool<Ball>(CreateBall, OnGetBall, OnReleaseBall, OnBallDestroy);
         }
 
         private Ball CreateBall()
@@ -50,6 +51,11 @@ namespace Assets.Codebase.Gameplay
         private void OnReleaseBall(Ball ball)
         {
             ball.gameObject.SetActive(false);
+        }
+
+        private void OnBallDestroy(Ball ball)
+        {
+            Destroy(ball.gameObject);
         }
     }
 }

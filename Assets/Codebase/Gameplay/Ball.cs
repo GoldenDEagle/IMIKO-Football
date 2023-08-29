@@ -1,5 +1,6 @@
 ﻿using Assets.Codebase.Infrastructure.Services;
 using Assets.Codebase.Infrastructure.Services.Progress;
+using System;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -9,6 +10,8 @@ namespace Assets.Codebase.Gameplay
     {
         private IProgressService _progress;
         private IObjectPool<Ball> _pool;
+
+        public static event Action OnBallCollected;
 
         private void Awake()
         {
@@ -20,6 +23,7 @@ namespace Assets.Codebase.Gameplay
             if (collision.GetComponent<PlayerController>())
             {
                 _progress.GameProgress.CurrentScore++;
+                OnBallCollected?.Invoke();
                 _pool.Release(this);
             }
         }
