@@ -1,10 +1,10 @@
 using Assets.Codebase.Infrastructure.Services;
 using Assets.Codebase.Infrastructure.Services.Assets;
+using Assets.Codebase.Infrastructure.Services.Factories;
 using Assets.Codebase.Infrastructure.Services.GameStates;
 using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
 using Assets.Codebase.UI;
-using Assets.Codebase.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -27,6 +27,9 @@ namespace Assets.Codebase.Infrastructure
 
             // Load scene
             SceneManager.LoadScene(GameSceneName);
+
+            // Show menu
+            ServiceLocator.Container.Single<IUIFactory>().CreateMainMenu();
         }
 
         private void RegisterServices()
@@ -37,6 +40,7 @@ namespace Assets.Codebase.Infrastructure
             services.RegisterSingle<IProgressService>(new ProgressService());
             services.RegisterSingle<IAssetProvider>(new AssetProvider());
             services.RegisterSingle<IUIFactory>(new UIFactory(_uiRoot, ServiceLocator.Container.Single<IAssetProvider>(), _hud));
+            services.RegisterSingle<IBallFactory>(new BallFactory(ServiceLocator.Container.Single<IAssetProvider>()));
         }
     }
 }
