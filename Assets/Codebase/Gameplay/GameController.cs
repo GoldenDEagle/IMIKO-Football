@@ -5,6 +5,7 @@ using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
 using Assets.Codebase.UI;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Codebase.Gameplay
@@ -58,7 +59,7 @@ namespace Assets.Codebase.Gameplay
         {
             // reset score
             _progress.GameProgress.CurrentScore = 0;
-            _activeMap = _maps[0];
+            _activeMap = _maps.FirstOrDefault(x => x.Id == _progress.GameProgress.CurrentMap);
             _activeMap.gameObject.SetActive(true);
 
             // Enable Hud
@@ -87,6 +88,9 @@ namespace Assets.Codebase.Gameplay
 
         private void AbandonGame()
         {
+            if (_gameStates.State != GameState.Game)
+                return;
+
             Pool.Instance.BallPool.Dispose();
             Destroy(_activePlayer.gameObject);
             _activePlayer = null;

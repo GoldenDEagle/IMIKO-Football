@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Assets.Codebase.UI.Windows
 {
-    public class MainMenuWindow : MonoBehaviour
+    public class MainMenuWindow : BaseWindow
     {
         [SerializeField] private Button _startButton;
         [SerializeField] private Button _resultsButton;
@@ -39,13 +39,9 @@ namespace Assets.Codebase.UI.Windows
 
         private void StartGame()
         {
-            _gameStates.SwitchState(GameState.Game);
+            _ui.HUD.SetState(HUDState.Minimal);
+            _ui.CreateMapSelectionWindow();
             CloseWindow();
-        }
-
-        private void CloseWindow()
-        {
-            Destroy(gameObject);
         }
 
         private void QuitGame()

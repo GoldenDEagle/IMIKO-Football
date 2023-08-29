@@ -8,5 +8,6 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         public HUDController HUD { get; }
 
         public MainMenuWindow CreateMainMenu();
+        public MapSelectionWindow CreateMapSelectionWindow();
     }
 }
