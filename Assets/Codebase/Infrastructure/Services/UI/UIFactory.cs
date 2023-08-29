@@ -1,8 +1,7 @@
-﻿using Assets.Codebase.UI.Windows;
+﻿using Assets.Codebase.Infrastructure.Services.Assets;
 using Assets.Codebase.UI;
+using Assets.Codebase.UI.Windows;
 using UnityEngine;
-using UnityEditor.VersionControl;
-using Assets.Codebase.Infrastructure.Services.Assets;
 
 namespace Assets.Codebase.Infrastructure.Services.UI
 {
