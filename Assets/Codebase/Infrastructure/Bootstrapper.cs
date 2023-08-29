@@ -3,13 +3,19 @@ using Assets.Codebase.Infrastructure.Services.Assets;
 using Assets.Codebase.Infrastructure.Services.GameStates;
 using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
+using Assets.Codebase.UI;
+using Assets.Codebase.Utils;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Codebase.Infrastructure
 {
     public class Bootstrapper : MonoBehaviour
     {
         [SerializeField] private RectTransform _uiRoot;
+        [SerializeField] private HUDController _hud;
+
+        private const string GameSceneName = "Game";
 
         private void Awake()
         {
@@ -20,6 +26,7 @@ namespace Assets.Codebase.Infrastructure
             ServiceLocator.Container.Single<IProgressService>().LoadProgress();
 
             // Load scene
+            SceneManager.LoadScene(GameSceneName);
         }
 
         private void RegisterServices()
@@ -28,8 +35,8 @@ namespace Assets.Codebase.Infrastructure
 
             services.RegisterSingle<IGameStateMachine>(new GameStateMachine());
             services.RegisterSingle<IProgressService>(new ProgressService());
-            services.RegisterSingle<IUIFactory>(new UIFactory(_uiRoot));
             services.RegisterSingle<IAssetProvider>(new AssetProvider());
+            services.RegisterSingle<IUIFactory>(new UIFactory(_uiRoot, ServiceLocator.Container.Single<IAssetProvider>(), _hud));
         }
     }
 }
