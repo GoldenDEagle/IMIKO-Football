@@ -84,7 +84,6 @@ namespace Assets.Codebase.UI
         private void OnBackButtonPressed()
         {
             OnBackPressed?.Invoke();
-            _gameStates.SwitchState(GameState.Idle);
             _ui.CreateMainMenu();
         }
     }

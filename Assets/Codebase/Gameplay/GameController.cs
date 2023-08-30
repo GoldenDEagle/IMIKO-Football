@@ -129,7 +129,7 @@ namespace Assets.Codebase.Gameplay
         {
             _elapsedTime = 0f;
 
-            while (_elapsedTime < _gameTime)
+            while (_elapsedTime <= _gameTime)
             {
                 _ui.HUD.UpdateTimer(_elapsedTime);
                 _elapsedTime++;
