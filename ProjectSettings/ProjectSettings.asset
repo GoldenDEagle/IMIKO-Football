@@ -255,7 +255,7 @@ PlayerSettings:
   useCustomProguardFile: 0
   AndroidTargetArchitectures: 1
   AndroidTargetDevices: 0
-  AndroidSplashScreenScale: 0
+  AndroidSplashScreenScale: 1
   androidSplashScreen: {fileID: 2800000, guid: 76d1e435499bf34459a0840a33e87fcd, type: 3}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
