@@ -1,4 +1,6 @@
-﻿using Assets.Codebase.Infrastructure.Services;
+﻿using Assets.Codebase.Data;
+using Assets.Codebase.Infrastructure.Services;
+using Assets.Codebase.Infrastructure.Services.GameStates;
 using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
 using TMPro;
@@ -7,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Assets.Codebase.UI.Windows
 {
-    public class EndGameWindow : MonoBehaviour
+    public class EndGameWindow : BaseWindow
     {
         [SerializeField] private TMP_Text _header;
         [SerializeField] private TMP_Text _ballCount;
@@ -17,11 +19,40 @@ namespace Assets.Codebase.UI.Windows
 
         private IUIFactory _ui;
         private IProgressService _progress;
+        private IGameStateMachine _gameStates;
 
         private void Awake()
         {
             _progress = ServiceLocator.Container.Single<IProgressService>();
             _ui = ServiceLocator.Container.Single<IUIFactory>();
+            _gameStates = ServiceLocator.Container.Single<IGameStateMachine>();
+        }
+
+        private void OnEnable()
+        {
+            _ballCount.text = _progress.GameProgress.CurrentScore.ToString();
+
+            _acceptButton.onClick.AddListener(SaveResultAndQuit);
+        }
+
+        private void OnDisable()
+        {
+            _acceptButton.onClick.RemoveAllListeners();
+        }
+
+        private void SaveResultAndQuit()
+        {
+            // Do nothing without name
+            if (_nameInput.text == string.Empty)
+                return;
+
+            _progress.GameProgress.AllResults.Add(new PlayerResult(_nameInput.text, _progress.GameProgress.CurrentScore));
+            _progress.SaveProgress();
+
+            // disable gamefield and show leaderboard
+            _gameStates.SwitchState(GameState.Idle);
+            _ui.CreateMainMenu();
+            CloseWindow();
         }
     }
 }

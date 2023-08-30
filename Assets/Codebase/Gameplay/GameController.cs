@@ -63,6 +63,10 @@ namespace Assets.Codebase.Gameplay
             {
                 StartGame();
             }
+            if (newState == GameState.Idle)
+            {
+                ClearGameField();
+            }
         }
 
         private void StartGame()
@@ -102,14 +106,24 @@ namespace Assets.Codebase.Gameplay
 
         private void AbandonGame()
         {
-            if (_gameStates.State != GameState.Game)
-                return;
+            if (_gameStates.State == GameState.Game || _gameStates.State == GameState.EndGame)
+            {
+                _gameStates.SwitchState(GameState.Idle);
+            }
+        }
 
+        private void ClearGameField()
+        {
             Pool.Instance.BallPool.Dispose();
             Destroy(_activePlayer.gameObject);
             _activePlayer = null;
             _activeMap.gameObject.SetActive(false);
             _activeMap = null;
+            if (_timerRoutine != null)
+            {
+                StopCoroutine(_timerRoutine);
+                _timerRoutine = null;
+            }
         }
 
         private IEnumerator CountTime()
@@ -123,9 +137,14 @@ namespace Assets.Codebase.Gameplay
                 yield return _oneSecondStep;
             }
 
-            // end game
-            _gameStates.SwitchState(GameState.Idle);
-            _ui.CreateMainMenu();
+            EndGame();
+        }
+
+        private void EndGame()
+        {
+            _gameStates.SwitchState(GameState.EndGame);
+            _activePlayer.DisableInput();
+            _ui.CreateEndGameWindow();
         }
     }
 }

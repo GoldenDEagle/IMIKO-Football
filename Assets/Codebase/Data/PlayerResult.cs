@@ -7,5 +7,11 @@ namespace Assets.Codebase.Data
     {
         public string PlayerName;
         public int Score;
+
+        public PlayerResult(string name, int score)
+        {
+            PlayerName = name;
+            Score = score;
+        }
     }
 }
