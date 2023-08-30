@@ -14,12 +14,9 @@ namespace Assets.Codebase.UI.Windows
         [SerializeField] private Button _quitButton;
 
         private IUIFactory _ui;
-        // remove later
-        private IGameStateMachine _gameStates;
 
         private void Awake()
         {
-            _gameStates = ServiceLocator.Container.Single<IGameStateMachine>();
             _ui = ServiceLocator.Container.Single<IUIFactory>();
         }
 
