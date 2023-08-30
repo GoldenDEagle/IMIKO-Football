@@ -114,7 +114,6 @@ namespace Assets.Codebase.Gameplay
 
         private void ClearGameField()
         {
-            Pool.Instance.BallPool.Dispose();
             Destroy(_activePlayer.gameObject);
             _activePlayer = null;
             _activeMap.gameObject.SetActive(false);
