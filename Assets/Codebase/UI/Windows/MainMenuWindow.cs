@@ -47,6 +47,10 @@ namespace Assets.Codebase.UI.Windows
         private void QuitGame()
         {
             Application.Quit();
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
         }
     }
 }

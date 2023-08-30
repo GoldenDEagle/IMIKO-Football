@@ -4,8 +4,10 @@ using Assets.Codebase.Infrastructure.Services.GameStates;
 using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
 using Assets.Codebase.UI;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Assets.Codebase.Gameplay
@@ -14,6 +16,8 @@ namespace Assets.Codebase.Gameplay
     {
         private const string PlayerPrefabPath = "Gameplay/Player";
 
+        [Tooltip("Duration of game in seconds")]
+        [SerializeField] private float _gameTime = 300f;
         [SerializeField] private int _numberOfBallsInGame = 3;
         [SerializeField] private List<Map> _maps;
 
@@ -24,6 +28,9 @@ namespace Assets.Codebase.Gameplay
 
         private Map _activeMap;
         private PlayerController _activePlayer;
+        private Coroutine _timerRoutine;
+        private float _elapsedTime = 0f;
+        private WaitForSeconds _oneSecondStep = new WaitForSeconds(1f);
 
         private void Awake()
         {
@@ -31,6 +38,9 @@ namespace Assets.Codebase.Gameplay
             _progress = ServiceLocator.Container.Single<IProgressService>();
             _ui = ServiceLocator.Container.Single<IUIFactory>();
             _assets = ServiceLocator.Container.Single<IAssetProvider>();
+
+            // Configure hud with game timer
+            _ui.HUD.SetMaxTime(_gameTime);
         }
 
         private void OnEnable()
@@ -57,8 +67,11 @@ namespace Assets.Codebase.Gameplay
 
         private void StartGame()
         {
-            // reset score
+            // Reset stats
             _progress.GameProgress.CurrentScore = 0;
+            _elapsedTime = 0;
+
+            // Choose map
             _activeMap = _maps.FirstOrDefault(x => x.Id == _progress.GameProgress.CurrentMap);
             _activeMap.gameObject.SetActive(true);
 
@@ -76,6 +89,7 @@ namespace Assets.Codebase.Gameplay
             }
 
             // Start Timer
+            _timerRoutine = StartCoroutine(CountTime());
         }
 
         private void SpawnABall()
@@ -96,6 +110,22 @@ namespace Assets.Codebase.Gameplay
             _activePlayer = null;
             _activeMap.gameObject.SetActive(false);
             _activeMap = null;
+        }
+
+        private IEnumerator CountTime()
+        {
+            _elapsedTime = 0f;
+
+            while (_elapsedTime < _gameTime)
+            {
+                _ui.HUD.UpdateTimer(_elapsedTime);
+                _elapsedTime++;
+                yield return _oneSecondStep;
+            }
+
+            // end game
+            _gameStates.SwitchState(GameState.Idle);
+            _ui.CreateMainMenu();
         }
     }
 }
