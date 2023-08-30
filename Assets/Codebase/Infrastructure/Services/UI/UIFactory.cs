@@ -11,6 +11,7 @@ namespace Assets.Codebase.Infrastructure.Services.UI
 
         private const string MainMenuPath = "UI/Windows/MainMenuWindow";
         private const string MapSelectionWindowPath = "UI/Windows/MapSelectionWindow";
+        private const string EndGameWindowPath = "UI/Windows/EndGameWindow";
 
         private RectTransform _uiRoot;
         private IAssetProvider _assets;
@@ -32,6 +33,13 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         public MapSelectionWindow CreateMapSelectionWindow()
         {
             var window = _assets.Instantiate(MapSelectionWindowPath).GetComponent<MapSelectionWindow>();
+            window.transform.SetParent(_uiRoot, false);
+            return window;
+        }
+
+        public EndGameWindow CreateEndGameWindow()
+        {
+            var window = _assets.Instantiate(EndGameWindowPath).GetComponent<EndGameWindow>();
             window.transform.SetParent(_uiRoot, false);
             return window;
         }
