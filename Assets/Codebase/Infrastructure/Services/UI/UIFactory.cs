@@ -13,6 +13,7 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         private const string MapSelectionWindowPath = "UI/Windows/MapSelectionWindow";
         private const string EndGameWindowPath = "UI/Windows/EndGameWindow";
         private const string LeaderboardWindowPath = "UI/Windows/LeaderboardWindow";
+        private const string PolicyWindowPath = "UI/Windows/PolicyWindow";
         private const string LeaderboardItemPath = "UI/LeaderboardItem";
         
         private RectTransform _uiRoot;
@@ -49,6 +50,13 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         public LeaderboardWindow CreateLeaderboardWindow()
         {
             var window = _assets.Instantiate(LeaderboardWindowPath).GetComponent<LeaderboardWindow>();
+            window.transform.SetParent(_uiRoot, false);
+            return window;
+        }
+
+        public PolicyWindow CreatePolicyWindow()
+        {
+            var window = _assets.Instantiate(PolicyWindowPath).GetComponent<PolicyWindow>();
             window.transform.SetParent(_uiRoot, false);
             return window;
         }

@@ -26,6 +26,7 @@ namespace Assets.Codebase.UI.Windows
 
             _startButton.onClick.AddListener(StartGame);
             _resultsButton.onClick.AddListener(OpenLeaderboard);
+            _policyButton.onClick.AddListener(OpenPolicy);
             _quitButton.onClick.AddListener(QuitGame);
         }
 
@@ -33,6 +34,7 @@ namespace Assets.Codebase.UI.Windows
         { 
             _startButton.onClick.RemoveListener(StartGame);
             _resultsButton.onClick.RemoveListener(OpenLeaderboard);
+            _policyButton.onClick.RemoveListener(OpenPolicy);
             _quitButton.onClick.RemoveListener(QuitGame);
         }
 
@@ -47,6 +49,13 @@ namespace Assets.Codebase.UI.Windows
         {
             _ui.HUD.SetState(HUDState.Minimal);
             _ui.CreateLeaderboardWindow();
+            CloseWindow();
+        }
+
+        private void OpenPolicy()
+        {
+            _ui.HUD.SetState(HUDState.Minimal);
+            _ui.CreatePolicyWindow();
             CloseWindow();
         }
 

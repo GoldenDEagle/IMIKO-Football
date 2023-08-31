@@ -11,6 +11,7 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         public MapSelectionWindow CreateMapSelectionWindow();
         public EndGameWindow CreateEndGameWindow();
         public LeaderboardWindow CreateLeaderboardWindow();
+        public PolicyWindow CreatePolicyWindow();
         public LeaderboardItem CreateLeaderboardItem();
     }
 }
