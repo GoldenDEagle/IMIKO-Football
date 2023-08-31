@@ -1,5 +1,113 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &207168571228265763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4988274572863831161}
+  - component: {fileID: 566929917936984220}
+  - component: {fileID: 4167294221840141812}
+  - component: {fileID: 101112140846010436}
+  m_Layer: 5
+  m_Name: Scroll View
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4988274572863831161
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207168571228265763}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 333608342179356389}
+  - {fileID: 2624063819632884384}
+  m_Father: {fileID: 4865338683519095092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -90}
+  m_SizeDelta: {x: 1000, y: 1700}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &566929917936984220
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207168571228265763}
+  m_CullTransparentMesh: 1
+--- !u!114 &4167294221840141812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207168571228265763}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &101112140846010436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207168571228265763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa08ab6e0800fa44ae55d278d1423e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Content: {fileID: 6690552028559323136}
+  m_Horizontal: 0
+  m_Vertical: 1
+  m_MovementType: 1
+  m_Elasticity: 0.1
+  m_Inertia: 1
+  m_DecelerationRate: 0.135
+  m_ScrollSensitivity: 1
+  m_Viewport: {fileID: 333608342179356389}
+  m_HorizontalScrollbar: {fileID: 0}
+  m_VerticalScrollbar: {fileID: 2356815551471493278}
+  m_HorizontalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 2
+  m_HorizontalScrollbarSpacing: -3
+  m_VerticalScrollbarSpacing: -3
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &953168009293308524
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,6 +242,168 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &991157902934164018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 590326119055295538}
+  m_Layer: 5
+  m_Name: Sliding Area
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &590326119055295538
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991157902934164018}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8428702642290528860}
+  m_Father: {fileID: 2624063819632884384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &2161790190654495904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2624063819632884384}
+  - component: {fileID: 213371555561707310}
+  - component: {fileID: 7932566738587352371}
+  - component: {fileID: 2356815551471493278}
+  m_Layer: 5
+  m_Name: Scrollbar Vertical
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2624063819632884384
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161790190654495904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 590326119055295538}
+  m_Father: {fileID: 4988274572863831161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
+  m_Pivot: {x: 1, y: 1}
+--- !u!222 &213371555561707310
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161790190654495904}
+  m_CullTransparentMesh: 1
+--- !u!114 &7932566738587352371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161790190654495904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2356815551471493278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2161790190654495904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4db7a114972834c8e4117be1d82ba3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 8363733498652984033}
+  m_HandleRect: {fileID: 8428702642290528860}
+  m_Direction: 2
+  m_Value: 0.5
+  m_Size: 0.425
+  m_NumberOfSteps: 0
+  m_OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4428017450743081303
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,6 +455,172 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _header: {fileID: 7020733875499520667}
   _policyText: {fileID: 8008470646677219347}
+--- !u!1 &4957626736102107718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8428702642290528860}
+  - component: {fileID: 8306769115196480523}
+  - component: {fileID: 8363733498652984033}
+  m_Layer: 5
+  m_Name: Handle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8428702642290528860
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957626736102107718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 590326119055295538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8306769115196480523
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957626736102107718}
+  m_CullTransparentMesh: 1
+--- !u!114 &8363733498652984033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4957626736102107718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5007532023870982382
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333608342179356389}
+  - component: {fileID: 4531303576427331026}
+  - component: {fileID: 5151117993230405305}
+  - component: {fileID: 5455047026141780503}
+  m_Layer: 5
+  m_Name: Viewport
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &333608342179356389
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007532023870982382}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1305887454371019278}
+  - {fileID: 6690552028559323136}
+  m_Father: {fileID: 4988274572863831161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &4531303576427331026
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007532023870982382}
+  m_CullTransparentMesh: 1
+--- !u!114 &5151117993230405305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007532023870982382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5455047026141780503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5007532023870982382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowMaskGraphic: 0
 --- !u!1 &5423705363320471692
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6884828389102734725
 RectTransform:
   m_ObjectHideFlags: 0
@@ -250,7 +686,87 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Some policies here.
+  m_text: "Privacy Policy\n                  baffishpic built the Aviator Airplane
+    game app as\n                  a Free app. This SERVICE is provided by\n                 
+    baffishpic at no cost and is intended for use as\n                  is.\n               
+    \r\n\n                  This page is used to inform visitors regarding my\n                 
+    policies with the collection, use, and disclosure of Personal\n                 
+    Information if anyone decided to use my Service.\n                \r\n\n                 
+    If you choose to use my Service, then you agree to\n                  the collection
+    and use of information in relation to this\n                  policy. The Personal
+    Information that I collect is\n                  used for providing and improving
+    the Service. I will not use or share your information with\n                 
+    anyone except as described in this Privacy Policy.\n                \r\n\n                 
+    The terms used in this Privacy Policy have the same meanings\n                 
+    as in our Terms and Conditions, which are accessible at\n                  Aviator
+    Airplane game unless otherwise defined in this Privacy Policy.\n               
+    \r\nInformation Collection and Use\r\n\n                  For a better experience,
+    while using our Service, I\n                  may require you to provide us with
+    certain personally\n                  identifiable information, including but
+    not limited to berezikovaolga808. The information that\n                  I request
+    will be retained on your device and is not collected by me in any way.\n               
+    \r\n\n                    The app does use third-party services that may collect\n                   
+    information used to identify you.\n                  \r\n\n                   
+    Link to the privacy policy of third-party service providers used\n                   
+    by the app\n                  \r\n  Google Play Services\r\nhttps://www.google.com/policies/privacy/\r\nLog
+    Data\r\n\n                  I want to inform you that whenever you\n                 
+    use my Service, in a case of an error in the app\n                  I collect
+    data and information (through third-party\n                  products) on your
+    phone called Log Data. This Log Data may\n                  include information
+    such as your device Internet Protocol\n                  (\xE2\x80\x9CIP\xE2\x80\x9D)
+    address, device name, operating system version, the\n                  configuration
+    of the app when utilizing my Service,\n                  the time and date of
+    your use of the Service, and other\n                  statistics.\n               
+    \r\nCookies\r\n\n                  Cookies are files with a small amount of data
+    that are\n                  commonly used as anonymous unique identifiers. These
+    are sent\n                  to your browser from the websites that you visit
+    and are\n                  stored on your device's internal memory.\n               
+    \r\n\n                  This Service does not use these \xE2\x80\x9Ccookies\xE2\x80\x9D
+    explicitly. However,\n                  the app may use third-party code and
+    libraries that use\n                  \xE2\x80\x9Ccookies\xE2\x80\x9D to collect
+    information and improve their services.\n                  You have the option
+    to either accept or refuse these cookies\n                  and know when a cookie
+    is being sent to your device. If you\n                  choose to refuse our
+    cookies, you may not be able to use some\n                  portions of this
+    Service.\n                \r\nService Providers\r\n\n                  I may
+    employ third-party companies and\n                  individuals due to the following
+    reasons:\n                \r\n  To facilitate our Service;  To provide the Service
+    on our behalf;  To perform Service-related services; or  To assist us in analyzing
+    how our Service is used.\n                  I want to inform users of this Service\n                 
+    that these third parties have access to their Personal\n                  Information.
+    The reason is to perform the tasks assigned to\n                  them on our
+    behalf. However, they are obligated not to\n                  disclose or use
+    the information for any other purpose.\n                \r\nSecurity\r\n\n                 
+    I value your trust in providing us your\n                  Personal Information,
+    thus we are striving to use commercially\n                  acceptable means
+    of protecting it. But remember that no method\n                  of transmission
+    over the internet, or method of electronic\n                  storage is 100%
+    secure and reliable, and I cannot\n                  guarantee its absolute security.\n               
+    \r\nLinks to Other Sites\r\n\n                  This Service may contain links
+    to other sites. If you click on\n                  a third-party link, you will
+    be directed to that site. Note\n                  that these external sites are
+    not operated by me.\n                  Therefore, I strongly advise you to review
+    the\n                  Privacy Policy of these websites. I have\n                 
+    no control over and assume no responsibility for the content,\n                 
+    privacy policies, or practices of any third-party sites or\n                 
+    services.\n                \r\nChildren\xE2\x80\x99s Privacy\r\n\n                   
+    These Services do not address anyone under the age of 13.\n                   
+    I do not knowingly collect personally\n                    identifiable information
+    from children under 13 years of age. In the case\n                    I discover
+    that a child under 13 has provided\n                    me with personal information,
+    I immediately\n                    delete this from our servers. If you are a
+    parent or guardian\n                    and you are aware that your child has
+    provided us with\n                    personal information, please contact me
+    so that\n                    I will be able to do the necessary actions.\n                 
+    \r\nChanges to This Privacy Policy\r\n\n                  I may update our Privacy
+    Policy from\n                  time to time. Thus, you are advised to review
+    this page\n                  periodically for any changes. I will\n                 
+    notify you of any changes by posting the new Privacy Policy on\n                 
+    this page.\n                \r\nThis policy is effective as of 2023-06-01\r\nContact
+    Us\r\n\n                  If you have any questions or suggestions about my\n                 
+    Privacy Policy, do not hesitate to contact me at [email&#160;protected]\r\n/cdn-cgi/l/email-protection\r\n.\n               
+    \r\nThis privacy policy page was created at privacypolicytemplate.net \r\nhttps://privacypolicytemplate.net\r\nand
+    modified/generated by App Privacy Policy Generator\r\nhttps://app-privacy-policy-generator.nisrulz.com/\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c0455ba24dc4d045881ed80f31b8dfc, type: 2}
   m_sharedMaterial: {fileID: -5904647776302612653, guid: 7c0455ba24dc4d045881ed80f31b8dfc, type: 2}
@@ -277,10 +793,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 18
+  m_fontSizeBase: 2
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -295,7 +811,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 5
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 1
@@ -349,6 +865,7 @@ RectTransform:
   m_Children:
   - {fileID: 8959133648598576536}
   - {fileID: 6884828389102734725}
+  - {fileID: 4988274572863831161}
   m_Father: {fileID: 9159361525416710200}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -356,3 +873,252 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1080, y: 1920}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &6000624652683229218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6690552028559323136}
+  - component: {fileID: 5922043045144724234}
+  - component: {fileID: 7082418103703956932}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6690552028559323136
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000624652683229218}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333608342179356389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -10, y: 4000}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5922043045144724234
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000624652683229218}
+  m_CullTransparentMesh: 1
+--- !u!114 &7082418103703956932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6000624652683229218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Privacy Policy\n                  baffishpic built the Aviator Airplane
+    game app as\n                  a Free app. This SERVICE is provided by\n                 
+    baffishpic at no cost and is intended for use as\n                  is.\n               
+    \r\n\n                  This page is used to inform visitors regarding my\n                 
+    policies with the collection, use, and disclosure of Personal\n                 
+    Information if anyone decided to use my Service.\n                \r\n\n                 
+    If you choose to use my Service, then you agree to\n                  the collection
+    and use of information in relation to this\n                  policy. The Personal
+    Information that I collect is\n                  used for providing and improving
+    the Service. I will not use or share your information with\n                 
+    anyone except as described in this Privacy Policy.\n                \r\n\n                 
+    The terms used in this Privacy Policy have the same meanings\n                 
+    as in our Terms and Conditions, which are accessible at\n                  Aviator
+    Airplane game unless otherwise defined in this Privacy Policy.\n               
+    \r\nInformation Collection and Use\r\n\n                  For a better experience,
+    while using our Service, I\n                  may require you to provide us with
+    certain personally\n                  identifiable information, including but
+    not limited to berezikovaolga808. The information that\n                  I request
+    will be retained on your device and is not collected by me in any way.\n               
+    \r\n\n                    The app does use third-party services that may collect\n                   
+    information used to identify you.\n                  \r\n\n                   
+    Link to the privacy policy of third-party service providers used\n                   
+    by the app\n                  \r\n  Google Play Services\r\nhttps://www.google.com/policies/privacy/\r\nLog
+    Data\r\n\n                  I want to inform you that whenever you\n                 
+    use my Service, in a case of an error in the app\n                  I collect
+    data and information (through third-party\n                  products) on your
+    phone called Log Data. This Log Data may\n                  include information
+    such as your device Internet Protocol\n                  (\xE2\x80\x9CIP\xE2\x80\x9D)
+    address, device name, operating system version, the\n                  configuration
+    of the app when utilizing my Service,\n                  the time and date of
+    your use of the Service, and other\n                  statistics.\n               
+    \r\nCookies\r\n\n                  Cookies are files with a small amount of data
+    that are\n                  commonly used as anonymous unique identifiers. These
+    are sent\n                  to your browser from the websites that you visit
+    and are\n                  stored on your device's internal memory.\n               
+    \r\n\n                  This Service does not use these \xE2\x80\x9Ccookies\xE2\x80\x9D
+    explicitly. However,\n                  the app may use third-party code and
+    libraries that use\n                  \xE2\x80\x9Ccookies\xE2\x80\x9D to collect
+    information and improve their services.\n                  You have the option
+    to either accept or refuse these cookies\n                  and know when a cookie
+    is being sent to your device. If you\n                  choose to refuse our
+    cookies, you may not be able to use some\n                  portions of this
+    Service.\n                \r\nService Providers\r\n\n                  I may
+    employ third-party companies and\n                  individuals due to the following
+    reasons:\n                \r\n  To facilitate our Service;  To provide the Service
+    on our behalf;  To perform Service-related services; or  To assist us in analyzing
+    how our Service is used.\n                  I want to inform users of this Service\n                 
+    that these third parties have access to their Personal\n                  Information.
+    The reason is to perform the tasks assigned to\n                  them on our
+    behalf. However, they are obligated not to\n                  disclose or use
+    the information for any other purpose.\n                \r\nSecurity\r\n\n                 
+    I value your trust in providing us your\n                  Personal Information,
+    thus we are striving to use commercially\n                  acceptable means
+    of protecting it. But remember that no method\n                  of transmission
+    over the internet, or method of electronic\n                  storage is 100%
+    secure and reliable, and I cannot\n                  guarantee its absolute security.\n               
+    \r\nLinks to Other Sites\r\n\n                  This Service may contain links
+    to other sites. If you click on\n                  a third-party link, you will
+    be directed to that site. Note\n                  that these external sites are
+    not operated by me.\n                  Therefore, I strongly advise you to review
+    the\n                  Privacy Policy of these websites. I have\n                 
+    no control over and assume no responsibility for the content,\n                 
+    privacy policies, or practices of any third-party sites or\n                 
+    services.\n                \r\nChildren\xE2\x80\x99s Privacy\r\n\n                   
+    These Services do not address anyone under the age of 13.\n                   
+    I do not knowingly collect personally\n                    identifiable information
+    from children under 13 years of age. In the case\n                    I discover
+    that a child under 13 has provided\n                    me with personal information,
+    I immediately\n                    delete this from our servers. If you are a
+    parent or guardian\n                    and you are aware that your child has
+    provided us with\n                    personal information, please contact me
+    so that\n                    I will be able to do the necessary actions.\n                 
+    \r\nChanges to This Privacy Policy\r\n\n                  I may update our Privacy
+    Policy from\n                  time to time. Thus, you are advised to review
+    this page\n                  periodically for any changes. I will\n                 
+    notify you of any changes by posting the new Privacy Policy on\n                 
+    this page.\n                \r\nThis policy is effective as of 2023-06-01\r\nContact
+    Us\r\n\n                  If you have any questions or suggestions about my\n                 
+    Privacy Policy, do not hesitate to contact me at [email&#160;protected]\r\n/cdn-cgi/l/email-protection\r\n.\n               
+    \r\nThis privacy policy page was created at privacypolicytemplate.net \r\nhttps://privacypolicytemplate.net\r\nand
+    modified/generated by App Privacy Policy Generator\r\nhttps://app-privacy-policy-generator.nisrulz.com/\r\n"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 7c0455ba24dc4d045881ed80f31b8dfc, type: 2}
+  m_sharedMaterial: {fileID: -5904647776302612653, guid: 7c0455ba24dc4d045881ed80f31b8dfc, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &7383617023051550782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1305887454371019278}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1305887454371019278
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7383617023051550782}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 333608342179356389}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 300}
+  m_Pivot: {x: 0, y: 1}

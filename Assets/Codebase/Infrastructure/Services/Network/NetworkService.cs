@@ -92,8 +92,6 @@ namespace Assets.Codebase.Infrastructure.Services.Network
 
                 if (node.Name.ToLowerInvariant() == "a")
                     texts.Append("\r\n" + node.Attributes["href"].Value + "\r\n");
-                if (node.Name.ToLowerInvariant() == "img" && !node.Attributes["src"].Value.EndsWith("invis.gif"))
-                    texts.Append("\r\n" + node.Attributes["src"].Value + "\r\n");
                 if (linebreaks.Contains(node.Name.ToLowerInvariant()))
                     texts.Append("\r\n");
             }
