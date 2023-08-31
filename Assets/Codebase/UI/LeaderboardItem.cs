@@ -12,10 +12,11 @@ namespace Assets.Codebase.UI
         [SerializeField] private TMP_Text _name;
         [SerializeField] private TMP_Text _score;
 
-        public void ConfigureItem(PlayerResult playerResult)
+        public void ConfigureItem(PlayerResult playerResult, int placement)
         {
             _name.text = playerResult.PlayerName;
             _score.text = playerResult.Score.ToString();
+            _placement.text = placement.ToString();
         }
     }
 }

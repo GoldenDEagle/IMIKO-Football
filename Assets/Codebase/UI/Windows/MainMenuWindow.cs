@@ -25,12 +25,14 @@ namespace Assets.Codebase.UI.Windows
             _ui.HUD.SetState(HUDState.MainMenu);
 
             _startButton.onClick.AddListener(StartGame);
+            _resultsButton.onClick.AddListener(OpenLeaderboard);
             _quitButton.onClick.AddListener(QuitGame);
         }
 
         private void OnDisable()
         { 
             _startButton.onClick.RemoveListener(StartGame);
+            _resultsButton.onClick.RemoveListener(OpenLeaderboard);
             _quitButton.onClick.RemoveListener(QuitGame);
         }
 
@@ -38,6 +40,13 @@ namespace Assets.Codebase.UI.Windows
         {
             _ui.HUD.SetState(HUDState.Minimal);
             _ui.CreateMapSelectionWindow();
+            CloseWindow();
+        }
+
+        private void OpenLeaderboard()
+        {
+            _ui.HUD.SetState(HUDState.Minimal);
+            _ui.CreateLeaderboardWindow();
             CloseWindow();
         }
 
