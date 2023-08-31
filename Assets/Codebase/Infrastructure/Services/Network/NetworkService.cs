@@ -2,6 +2,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Networking;
+using HtmlAgilityPack;
 
 namespace Assets.Codebase.Infrastructure.Services.Network
 {
@@ -17,22 +18,30 @@ namespace Assets.Codebase.Infrastructure.Services.Network
             return _data;
         }
 
+        //public void UpdatePolicy()
+        //{
+        //    if (_request != null) return;
+
+        //    _request = UnityWebRequest.Get(_url);
+        //    _request.SendWebRequest().completed += OnDataLoaded;
+        //}
+
+        //private void OnDataLoaded(AsyncOperation operation)
+        //{
+        //    if (operation.isDone)
+        //    {
+        //        _data = _request.downloadHandler.text;
+        //        Debug.Log(_data);
+        //        //ParseData(_data);
+        //    }
+        //}
+
         public void UpdatePolicy()
         {
-            if (_request != null) return;
-
-            _request = UnityWebRequest.Get(_url);
-            _request.SendWebRequest().completed += OnDataLoaded;
-        }
-
-        private void OnDataLoaded(AsyncOperation operation)
-        {
-            if (operation.isDone)
-            {
-                _data = _request.downloadHandler.text;
-                Debug.Log(_data);
-                //ParseData(_data);
-            }
+            var web = new HtmlWeb();
+            var doc = web.Load(_url);
+            _data = doc.ParsedText;
+            Debug.Log(_data);
         }
 
         private void ParseData(string data)
