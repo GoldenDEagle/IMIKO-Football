@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Assets.Codebase.Data;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,10 @@ namespace Assets.Codebase.UI
         [SerializeField] private TMP_Text _name;
         [SerializeField] private TMP_Text _score;
 
-        public void ConfigureItem()
+        public void ConfigureItem(PlayerResult playerResult)
         {
-
+            _name.text = playerResult.PlayerName;
+            _score.text = playerResult.Score.ToString();
         }
     }
 }

@@ -53,7 +53,8 @@ namespace Assets.Codebase.UI.Windows
 
             // disable gamefield and show leaderboard
             _gameStates.SwitchState(GameState.Idle);
-            _ui.CreateMainMenu();
+            _ui.HUD.SetState(HUDState.Minimal);
+            _ui.CreateLeaderboardWindow();
             CloseWindow();
         }
 
