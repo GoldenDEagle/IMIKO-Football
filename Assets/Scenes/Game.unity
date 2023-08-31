@@ -7169,7 +7169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47ea822cccca78648829dfe515f18193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameTime: 61
+  _gameTime: 300
   _numberOfBallsInGame: 3
   _maps:
   - {fileID: 830212827}

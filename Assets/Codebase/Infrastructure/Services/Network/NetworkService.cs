@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Assets.Codebase.Infrastructure.Services.Network
 {
@@ -27,6 +28,11 @@ namespace Assets.Codebase.Infrastructure.Services.Network
         private void ParseData(string html)
         {
             _data = GetTextFromHtml(html);
+
+            // remove extra spaces
+            RegexOptions options = RegexOptions.None;
+            Regex regex = new Regex("[ ]{2,}", options);
+            _data = regex.Replace(_data, " ");
         }
 
 
@@ -69,6 +75,8 @@ namespace Assets.Codebase.Infrastructure.Services.Network
 
                 if (node.Name.ToLowerInvariant() == "a")
                     texts.Append("\n" + node.Attributes["href"].Value + "\n");
+                if (linebreaks.Contains(node.Name.ToLowerInvariant()))
+                    texts.Append("\n");
             }
 
             return texts.ToString();
