@@ -93,8 +93,6 @@ namespace Assets.Codebase.Infrastructure.Services.Network
 
                 if (node.Name.ToLowerInvariant() == "a")
                     texts.Append("\n" + node.Attributes["href"].Value + "\n");
-                //if (linebreaks.Contains(node.Name.ToLowerInvariant()))
-                //    texts.Append("\n");
             }
 
             return texts.ToString();
