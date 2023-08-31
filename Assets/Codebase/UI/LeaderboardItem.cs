@@ -17,6 +17,19 @@ namespace Assets.Codebase.UI
             _name.text = playerResult.PlayerName;
             _score.text = playerResult.Score.ToString();
             _placement.text = placement.ToString();
+
+            if (placement == 1)
+            {
+                _placementImage.color = Color.red;
+            }
+            if (placement == 2)
+            {
+                _placementImage.color = Color.green;
+            }
+            if (placement == 3)
+            {
+                _placementImage.color = Color.yellow;
+            }
         }
     }
 }
