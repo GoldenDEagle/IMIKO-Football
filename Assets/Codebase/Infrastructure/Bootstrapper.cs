@@ -2,11 +2,13 @@ using Assets.Codebase.Infrastructure.Services;
 using Assets.Codebase.Infrastructure.Services.Assets;
 using Assets.Codebase.Infrastructure.Services.Factories;
 using Assets.Codebase.Infrastructure.Services.GameStates;
+using Assets.Codebase.Infrastructure.Services.Network;
 using Assets.Codebase.Infrastructure.Services.Progress;
 using Assets.Codebase.Infrastructure.Services.UI;
 using Assets.Codebase.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 namespace Assets.Codebase.Infrastructure
 {
@@ -25,6 +27,9 @@ namespace Assets.Codebase.Infrastructure
             // Load progress
             ServiceLocator.Container.Single<IProgressService>().LoadProgress();
 
+            // Update policy
+            ServiceLocator.Container.Single<INetworkService>().UpdatePolicy();
+
             // Load scene
             SceneManager.LoadScene(GameSceneName);
 
@@ -41,6 +46,7 @@ namespace Assets.Codebase.Infrastructure
             services.RegisterSingle<IAssetProvider>(new AssetProvider());
             services.RegisterSingle<IUIFactory>(new UIFactory(_uiRoot, ServiceLocator.Container.Single<IAssetProvider>(), _hud));
             services.RegisterSingle<IBallFactory>(new BallFactory(ServiceLocator.Container.Single<IAssetProvider>()));
+            services.RegisterSingle<INetworkService>(new NetworkService());
         }
     }
 }
