@@ -50,7 +50,6 @@ namespace Assets.Codebase.Infrastructure.Services.Network
         private void ParseData(string html)
         {
             _data = GetTextFromHtml(html);
-            Debug.Log(_data);
         }
 
 
