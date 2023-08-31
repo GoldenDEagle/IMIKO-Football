@@ -7,7 +7,6 @@ using Assets.Codebase.UI;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace Assets.Codebase.Gameplay
@@ -136,6 +135,7 @@ namespace Assets.Codebase.Gameplay
                 yield return _oneSecondStep;
             }
 
+            // end game after time runs out
             EndGame();
         }
 

@@ -4,7 +4,7 @@ namespace Assets.Codebase.Utils
 {
     public class TimeConverter
     {
-        // returns time in 00:00
+        // returns time in 0:00
         public static string TimeInMinutes(float time)
         {
             int minutes = Mathf.FloorToInt(time / 60f);

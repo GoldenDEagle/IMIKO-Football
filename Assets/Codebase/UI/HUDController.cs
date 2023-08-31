@@ -42,6 +42,7 @@ namespace Assets.Codebase.UI
             _backButton.onClick.RemoveAllListeners();
         }
 
+        // switch between hud configurations
         public void SetState(HUDState state)
         {
             switch (state)

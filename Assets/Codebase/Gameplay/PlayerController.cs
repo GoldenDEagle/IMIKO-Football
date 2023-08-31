@@ -6,6 +6,7 @@ namespace Assets.Codebase.Gameplay
     [RequireComponent(typeof(Rigidbody2D), typeof(PlayerInput))]
     public class PlayerController : MonoBehaviour
     {
+        [Tooltip("Boot speed")]
         [SerializeField] private float _speed = 2f;
 
         private float _verticalDirection;

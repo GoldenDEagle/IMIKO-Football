@@ -18,6 +18,7 @@ namespace Assets.Codebase.UI
             _score.text = playerResult.Score.ToString();
             _placement.text = placement.ToString();
 
+            // set color for first 3
             if (placement == 1)
             {
                 _placementImage.color = Color.red;
