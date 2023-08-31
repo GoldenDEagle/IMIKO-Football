@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 using HtmlAgilityPack;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Assets.Codebase.Infrastructure.Services.Network
 {
@@ -91,9 +92,9 @@ namespace Assets.Codebase.Infrastructure.Services.Network
                 }
 
                 if (node.Name.ToLowerInvariant() == "a")
-                    texts.Append("\r\n" + node.Attributes["href"].Value + "\r\n");
-                if (linebreaks.Contains(node.Name.ToLowerInvariant()))
-                    texts.Append("\r\n");
+                    texts.Append("\n" + node.Attributes["href"].Value + "\n");
+                //if (linebreaks.Contains(node.Name.ToLowerInvariant()))
+                //    texts.Append("\n");
             }
 
             return texts.ToString();
