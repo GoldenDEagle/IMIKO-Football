@@ -10,5 +10,7 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         public MainMenuWindow CreateMainMenu();
         public MapSelectionWindow CreateMapSelectionWindow();
         public EndGameWindow CreateEndGameWindow();
+        public LeaderboardWindow CreateLeaderboardWindow();
+        public LeaderboardItem CreateLeaderboardItem();
     }
 }

@@ -12,7 +12,9 @@ namespace Assets.Codebase.Infrastructure.Services.UI
         private const string MainMenuPath = "UI/Windows/MainMenuWindow";
         private const string MapSelectionWindowPath = "UI/Windows/MapSelectionWindow";
         private const string EndGameWindowPath = "UI/Windows/EndGameWindow";
-
+        private const string LeaderboardWindowPath = "UI/Windows/LeaderboardWindow";
+        private const string LeaderboardItemPath = "UI/LeaderboardItem";
+        
         private RectTransform _uiRoot;
         private IAssetProvider _assets;
 
@@ -42,6 +44,19 @@ namespace Assets.Codebase.Infrastructure.Services.UI
             var window = _assets.Instantiate(EndGameWindowPath).GetComponent<EndGameWindow>();
             window.transform.SetParent(_uiRoot, false);
             return window;
+        }
+
+        public LeaderboardWindow CreateLeaderboardWindow()
+        {
+            var window = _assets.Instantiate(LeaderboardWindowPath).GetComponent<LeaderboardWindow>();
+            window.transform.SetParent(_uiRoot, false);
+            return window;
+        }
+
+        public LeaderboardItem CreateLeaderboardItem()
+        {
+            var item = _assets.Instantiate(LeaderboardItemPath).GetComponent<LeaderboardItem>();
+            return item;
         }
     }
 }
