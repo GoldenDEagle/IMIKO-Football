@@ -33,11 +33,13 @@ namespace Assets.Codebase.UI.Windows
             _ballCount.text = _progress.GameProgress.CurrentScore.ToString();
 
             _acceptButton.onClick.AddListener(SaveResultAndQuit);
+            _ui.HUD.OnBackPressed += OnBackPressed;
         }
 
         private void OnDisable()
         {
             _acceptButton.onClick.RemoveAllListeners();
+            _ui.HUD.OnBackPressed -= OnBackPressed;
         }
 
         private void SaveResultAndQuit()
@@ -52,6 +54,11 @@ namespace Assets.Codebase.UI.Windows
             // disable gamefield and show leaderboard
             _gameStates.SwitchState(GameState.Idle);
             _ui.CreateMainMenu();
+            CloseWindow();
+        }
+
+        private void OnBackPressed()
+        {
             CloseWindow();
         }
     }
